@@ -1,0 +1,32 @@
+<section id="study-system" class="study-system-section">
+  <!-- Ambient Atmospheric Effects -->
+  <div class="system-backdrop">
+    <div class="system-glow"></div>
+    <div class="system-pattern-grid"></div>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="system-header text-center">
+      <span class="editorial-tag gold-tag">البيئة التعليمية</span>
+      <h2 class="system-main-title">نظامٌ تعليمي صُمم لرحلتك</h2>
+      <p class="system-subtitle">
+        بيئة تجمع بين الانضباط والمرونة، لتمكينك من الاستمرار في مدارسة القرآن الكريم دون انقطاع.
+      </p>
+    </div>
+
+    <!-- Feature Blocks Grid -->
+    <div class="system-grid">
+      <div *ngFor="let item of features" class="system-block">
+        <div class="block-header">
+          <span class="block-arabic-num">{{ item.number }}</span>
+          <div class="block-gold-line"></div>
+        </div>
+        <div class="block-content">
+          <h3 class="block-title">{{ item.title }}</h3>
+          <p class="block-desc">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,161 @@
+<div class="contact-rich-page bg-arabesque-pattern">
+  <!-- Page Hero -->
+  <section class="contact-page-hero">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 0;">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>التسجيل والتواصل</span>
+        </div>
+        <h1 class="section-title" style="font-size: clamp(2.6rem, 5vw, 3.8rem);">تواصل مع أكاديمية أهل القرآن</h1>
+        <p class="section-desc">
+          يسعدنا استقبال استفساراتكم وتسجيلكم في رحاب القرآن الكريم، وفريقنا التعليمي في خدمتكم دائماً.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Grid -->
+  <section class="contact-main-section">
+    <div class="container">
+      <div class="contact-card-frame glass-card">
+        <!-- Direct Channels (Emerald Side) -->
+        <div class="contact-channels-side">
+          <div class="badge-pill-gold" style="background: rgba(255, 255, 255, 0.15); border-color: rgba(212, 175, 55, 0.5); color: var(--color-gold-start);">
+            <span class="badge-dot" style="background: var(--color-gold-start);"></span>
+            <span>قنوات التواصل المباشر</span>
+          </div>
+
+          <h2 class="channels-side-title">نحن هنا للإجابة عن كافة استفساراتكم</h2>
+          <p class="channels-side-desc">
+            تواصل معنا مباشرة عبر الواتساب أو البريد الإلكتروني لتحديد مسارك القرآني واختيار الموعد الأنسب لك.
+          </p>
+
+          <div class="channels-list">
+            <!-- WhatsApp -->
+            <div class="channel-row">
+              <div class="channel-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="channel-text">
+                <span class="channel-label">واتساب الأكاديمية الرسمي</span>
+                <strong class="channel-val" dir="ltr">+20 100 000 0000</strong>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="channel-row">
+              <div class="channel-icon-box"><i class="fa-regular fa-envelope"></i></div>
+              <div class="channel-text">
+                <span class="channel-label">البريد الإلكتروني</span>
+                <strong class="channel-val" dir="ltr">info@ahlelquran.academy</strong>
+              </div>
+            </div>
+
+            <!-- Global Online -->
+            <div class="channel-row">
+              <div class="channel-icon-box"><i class="fa-solid fa-earth-americas"></i></div>
+              <div class="channel-text">
+                <span class="channel-label">نطاق التعلّم</span>
+                <strong class="channel-val">حلقات فردية مباشرة عن بُعد حول العالم</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="channels-quote font-quran-text">
+            «وَقُل رَّبِّ زِدْنِي عِلْمًا»
+          </div>
+        </div>
+
+        <!-- Form Side (White Background) -->
+        <div class="contact-form-side">
+          <div *ngIf="!isSubmitted(); else thankYouState">
+            <h2 class="form-side-title">احجز جلستك التقييمية المجانية</h2>
+            <p class="form-side-desc">
+              سجّل رغبتك وسيقوم المشرف القرآني بالتواصل معك لتأكيد المواعيد وتفاصيل الانضمام.
+            </p>
+
+            <form (ngSubmit)="onSubmit()" class="rich-form">
+              <div class="form-field-group">
+                <label for="fullName" class="form-label">الاسم الكامل *</label>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  [(ngModel)]="formData.fullName" 
+                  required 
+                  placeholder="مثال: عبد الرحمن محمد"
+                  class="form-input" />
+              </div>
+
+              <div class="form-field-group">
+                <label for="phone" class="form-label">رقم الهاتف / الواتساب (مع رمز الدولة) *</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  [(ngModel)]="formData.phone" 
+                  required 
+                  placeholder="+966 / +20 / +971 ..."
+                  class="form-input" 
+                  dir="ltr" />
+              </div>
+
+              <div class="form-field-group">
+                <label for="program" class="form-label">المسار أو البرنامج المطلوب</label>
+                <select 
+                  id="program" 
+                  name="program" 
+                  [(ngModel)]="formData.program" 
+                  class="form-select">
+                  <option *ngFor="let opt of programOptions" [value]="opt">{{ opt }}</option>
+                </select>
+              </div>
+
+              <div class="form-field-group">
+                <label for="notes" class="form-label">ملاحظات أو أسئلة إضافية</label>
+                <textarea 
+                  id="notes" 
+                  name="notes" 
+                  [(ngModel)]="formData.notes" 
+                  rows="4" 
+                  placeholder="أذكر مستواك الحالي، أو الأوقات المفضلة لديك..."
+                  class="form-textarea"></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                [disabled]="!formData.fullName || !formData.phone" 
+                class="btn btn-gold btn-submit-form">
+                <span>إرسال طلب التسجيل المجاني</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Thank You Message -->
+          <ng-template #thankYouState>
+            <div class="thank-you-view text-center">
+              <div class="thank-you-badge">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <h2 class="thank-you-title">تم استلام طلبكم بنجاح</h2>
+              <p class="thank-you-text">
+                أهلاً بك يا <strong>{{ formData.fullName }}</strong>. تم تسجيل رغبتك في <strong>{{ formData.program }}</strong>.
+              </p>
+              <p class="thank-you-sub">
+                سيتواصل معك المشرف التعليمي عبر الواتساب على الرقم <strong>{{ formData.phone }}</strong> لترتيب موعد جلستك التقييمية المجانية.
+              </p>
+              <div class="thank-you-btns">
+                <button type="button" (click)="resetForm()" class="btn btn-outline-emerald">
+                  <span>إرسال طلب آخر</span>
+                </button>
+                <a routerLink="/" class="btn btn-gold">
+                  <span>العودة للرئيسية</span>
+                </a>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

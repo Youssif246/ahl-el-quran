@@ -1,0 +1,34 @@
+<section id="journey" class="journey-section">
+  <div class="container">
+    <!-- Header -->
+    <div class="journey-header text-center">
+      <span class="editorial-tag">مسار الدارس</span>
+      <h2 class="section-title">رحلتك مع القرآن تبدأ من هنا</h2>
+      <p class="section-lead">
+        خطوات واضحة وميسرة تصحبك من البداية وحتى تحقيق غايتك في حفظ كتاب الله وتعلّمه.
+      </p>
+    </div>
+
+    <!-- Timeline Journey (Horizontal on desktop, vertical on mobile) -->
+    <div class="journey-timeline-container">
+      <div class="journey-track-line"></div>
+
+      <div class="journey-steps-grid">
+        <div *ngFor="let step of steps; let idx = index" class="journey-step-card">
+          <!-- Step Node / Marker -->
+          <div class="step-marker-wrapper">
+            <div class="step-outer-ring">
+              <span class="step-num">{{ step.step }}</span>
+            </div>
+          </div>
+
+          <!-- Step Content -->
+          <div class="step-content">
+            <h3 class="step-title">{{ step.title }}</h3>
+            <p class="step-description">{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+<section id="hero" class="hero-section">
+  <!-- Atmospheric Background & Architecture Visuals -->
+  <div class="hero-backdrop">
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-gold"></div>
+    
+    <!-- Architectural Silhouette Arches (SVG) -->
+    <div class="arch-silhouette-container">
+      <svg class="arch-svg" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <path d="M720 180 C840 280 920 440 920 620 L920 900 L520 900 L520 620 C520 440 600 280 720 180 Z" stroke="rgba(184, 148, 77, 0.15)" stroke-width="1.5" fill="none"/>
+        <path d="M720 220 C820 310 880 440 880 600 L880 900 L560 900 L560 600 C560 440 620 310 720 220 Z" stroke="rgba(184, 148, 77, 0.08)" stroke-width="1" fill="none"/>
+        <circle cx="720" cy="200" r="16" stroke="rgba(184, 148, 77, 0.2)" stroke-width="1" fill="none"/>
+        <circle cx="720" cy="200" r="4" fill="rgba(184, 148, 77, 0.3)"/>
+      </svg>
+    </div>
+
+    <!-- Subtle Sacred Geometric Grid Overlay -->
+    <div class="geometric-pattern-overlay"></div>
+  </div>
+
+  <div class="container hero-container">
+    <div class="hero-content">
+      <!-- Minimal Editorial Badge -->
+      <div class="editorial-badge">
+        <span class="badge-dot"></span>
+        <span>منصة قرآنية تعليمية متخصصة</span>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="hero-titles-wrapper">
+        <h1 class="hero-main-title">
+          <span class="title-primary">أكاديمية أهل القرآن</span>
+          <span class="title-secondary">للتحفيظ والإقراء</span>
+        </h1>
+        
+        <h2 class="hero-tagline">
+          «رِحْلَةٌ تَبْدَأُ بِحَرْفٍ… وَتَسْمُو بِكَ إِلَى الإِتْقَانِ»
+        </h2>
+      </div>
+
+      <!-- Supporting Editorial Narrative -->
+      <p class="hero-description">
+        منصة تعليمية متخصصة في تعليم القرآن الكريم وعلومه عن بُعد، تعتمد نهجاً متقناً لتعليم التلاوة والتجويد والحفظ، وتصحب الدارس في مسار تعليمي هادف وميسر.
+      </p>
+
+      <!-- Primary & Secondary CTA Actions -->
+      <div class="hero-actions">
+        <a href="#contact" (click)="scrollToSection('#contact', $event)" class="btn btn-gold btn-hero-primary">
+          <span>ابدأ رحلتك الآن</span>
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <a href="#about" (click)="scrollToSection('#about', $event)" class="btn btn-outline-light btn-hero-secondary">
+          <span>اكتشف الأكاديمية</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </div>
+
+      <!-- Verified Feature Pillars Bar -->
+      <div class="hero-pillars-grid">
+        <div *ngFor="let item of academyHighlights" class="pillar-item">
+          <div class="pillar-indicator"></div>
+          <div class="pillar-info">
+            <h3 class="pillar-title">{{ item.title }}</h3>
+            <p class="pillar-desc">{{ item.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ambient Bottom Transition -->
+  <div class="hero-bottom-fade"></div>
+</section>

@@ -1,0 +1,90 @@
+<header class="vibrant-navbar" [class.scrolled]="isScrolled()">
+  <div class="container navbar-inner">
+    <!-- Official Academy Brand Logo -->
+    <a routerLink="/" (click)="closeMobileMenu()" class="navbar-brand">
+      <img src="logo.png" alt="شعار أكاديمية أهل القرآن" class="navbar-logo-img" />
+      <div class="brand-headings">
+        <span class="brand-title">أكاديمية أهل القرآن</span>
+        <span class="brand-tag">للتحفيظ والإقراء</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="desktop-navigation" aria-label="القائمة الرئيسية">
+      <ul class="nav-links">
+        <li *ngFor="let item of navItems">
+          <a [routerLink]="item.path" routerLinkActive="active-nav-item"
+            [routerLinkActiveOptions]="{ exact: item.exact }" class="nav-link">
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-action-area">
+      <a routerLink="/contact" class="btn btn-gold btn-header-cta">
+        <span>ابدأ رحلتك الآن</span>
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button type="button" class="mobile-burger-btn" (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="mobileMenuOpen()" aria-label="القائمة">
+        <span class="burger-bar" [class.open]="mobileMenuOpen()"></span>
+        <span class="burger-bar" [class.open]="mobileMenuOpen()"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Full-Screen Solid Royal Mobile Navigation Modal -->
+<div class="mobile-fullscreen-modal" [class.active]="mobileMenuOpen()">
+  <!-- Top Bar -->
+  <div class="modal-top-bar">
+    <div class="modal-brand">
+      <img src="logo.png" alt="شعار الأكاديمية" class="modal-logo" />
+      <div class="modal-brand-text">
+        <span class="modal-title">أكاديمية أهل القرآن</span>
+        <span class="modal-subtitle">للتحفيظ والإقراء عن بُعد</span>
+      </div>
+    </div>
+    <button type="button" class="modal-close-btn" (click)="closeMobileMenu()" aria-label="إغلاق القائمة">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- Scrollable Nav List -->
+  <div class="modal-nav-body">
+    <nav class="modal-nav-container" aria-label="قائمة الجوال">
+      <ul class="modal-nav-list">
+        <li *ngFor="let item of navItems">
+          <a [routerLink]="item.path" routerLinkActive="active-modal-item"
+            [routerLinkActiveOptions]="{ exact: item.exact }" (click)="closeMobileMenu()" class="modal-nav-card">
+            <div class="modal-card-icon-box">
+              <i [class]="item.icon"></i>
+            </div>
+            <div class="modal-card-content">
+              <span class="modal-card-title">{{ item.label }}</span>
+              <span class="modal-card-sub">{{ item.sub }}</span>
+            </div>
+            <div class="modal-card-arrow">
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Modal Footer Section -->
+    <div class="modal-footer-box">
+      <a routerLink="/contact" (click)="closeMobileMenu()" class="btn btn-gold btn-block modal-cta-btn">
+        <span>احجز جلستك التقييمية المجانية</span>
+        <i class="fa-solid fa-paper-plane"></i>
+      </a>
+
+      <div class="modal-verse font-quran-text">
+        «خَيْرُكُمْ مَنْ تَعَلَّمَ القُرْآنَ وَعَلَّمَهُ»
+      </div>
+    </div>
+  </div>
+</div>

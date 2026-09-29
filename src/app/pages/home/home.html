@@ -1,0 +1,256 @@
+<div class="rich-home-page bg-arabesque-pattern">
+  <!-- =========================================================================
+       1. HERO SECTION — DYNAMIC 2-COLUMN SPLIT WITH AUDIO PLAYER
+       ========================================================================= -->
+  <section class="hero-split-section">
+    <div class="hero-ambient-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-grid-split">
+        <!-- Right Column: Content, Headings, Audio Widget & Dual CTAs -->
+        <div class="hero-content-col">
+          <div class="badge-pill-gold">
+            <span class="badge-dot"></span>
+            <span>أكاديمية معتمدة لتعليم القرآن الكريم عن بُعد</span>
+          </div>
+
+          <h1 class="hero-main-title">
+            تعلّم القرآن الكريم
+            <span class="title-gold-gradient">تلاوةً وحفظاً وإتقاناً</span>
+          </h1>
+
+          <p class="hero-subtext-lead">
+            انضم إلى حلقات فردية وتفاعلية مباشرة <strong>(1-on-1)</strong> بإشراف نخبة من المقرئين والمعلمين المجازين
+            بالسند المتصل، وفق خطط دراسية ميسرة تناسب جميع الأعمار والمستويات.
+          </p>
+
+          <!-- Dual Action Buttons -->
+          <div class="hero-dual-ctas">
+            <a routerLink="/contact" class="btn btn-gold btn-hero-cta">
+              <span>احجز تجربة مجانية الآن</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a routerLink="/programs" class="btn btn-outline-emerald btn-hero-cta">
+              <span>استكشف المسارات التعليمية</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Row -->
+          <div class="hero-trust-row">
+            <div class="trust-pill-item">
+              <i class="fa-solid fa-check trust-check"></i>
+              <span>حلقات تفاعلية 1-on-1</span>
+            </div>
+            <div class="trust-pill-item">
+              <i class="fa-solid fa-check trust-check"></i>
+              <span>معلمون مجازون بالسند</span>
+            </div>
+            <div class="trust-pill-item">
+              <i class="fa-solid fa-check trust-check"></i>
+              <span>مواعيد مرنة طوال الأسبوع</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Column: Architectural Visual Frame with Quran & Glow -->
+        <div class="hero-visual-col">
+          <div class="hero-visual-frame-container">
+            <!-- Arched Islamic Frame Container -->
+            <div class="arch-framed-window">
+              <div class="arch-inner-gradient-canvas">
+                <!-- Mosque Mihrab Silhouette SVG -->
+                <svg class="mihrab-silhouette-svg" viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M200 20 C290 60 360 160 360 320 L360 500 L40 500 L40 320 C40 160 110 60 200 20 Z"
+                    fill="url(#mihrabGrad)" stroke="var(--color-gold)" stroke-width="2" />
+                  <circle cx="200" cy="180" r="70" fill="rgba(212, 175, 55, 0.15)" />
+                  <defs>
+                    <linearGradient id="mihrabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#0B3B2D" />
+                      <stop offset="100%" stop-color="#06281E" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <!-- Illuminated Quran Art Core with Official Logo -->
+                <div class="open-mushaf-art-center text-center">
+                  <img src="logo.png" alt="شعار أكاديمية أهل القرآن" class="hero-arch-logo-img" />
+                  <h3 class="framed-quran-title font-quran-text">«وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا»</h3>
+                  <p class="framed-quran-sub">حلقات قرآنية فردية ومباشرة عبر الإنترنت</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2. PROGRAMS SHOWCASE — INTERACTIVE MULTI-COLUMN CARD GRID
+       ========================================================================= -->
+  <section class="programs-showcase-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>المسارات التعليمية المعتمدة</span>
+        </div>
+        <h2 class="section-title">برامج قرآنية متخصصة لكل الأهداف</h2>
+        <p class="section-desc">
+          مناهج مدروسة بدقة تناسب المبتدئ والحافظ والراغب في الإجازة، تحت إشراف نخبة من المقرئين.
+        </p>
+      </div>
+
+      <!-- 6 Program Cards Grid -->
+      <div class="programs-cards-grid">
+        <div *ngFor="let prog of programs" class="program-rich-card glass-card">
+          <!-- Card Top Bar -->
+          <div class="program-card-header">
+            <div class="program-icon-badge">
+              <i [class]="prog.icon"></i>
+            </div>
+            <span class="program-duration-pill">{{ prog.duration }}</span>
+          </div>
+
+          <!-- Titles & Badge -->
+          <div class="program-card-body">
+            <div class="program-title-row">
+              <h3 class="program-card-title">{{ prog.title }}</h3>
+              <span class="program-badge-tag">{{ prog.badge }}</span>
+            </div>
+
+            <p class="program-card-desc">{{ prog.desc }}</p>
+
+            <!-- Highlights Checklist -->
+            <ul class="program-highlights-list">
+              <li *ngFor="let item of prog.highlights">
+                <i class="fa-solid fa-check highlight-check-icon"></i>
+                <span>{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card Footer Action -->
+          <div class="program-card-footer">
+            <a routerLink="/programs" class="program-details-link">
+              <span>عرض تفاصيل المسار</span>
+              <i class="fa-solid fa-arrow-left arrow-gold"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="programs-bottom-cta text-center">
+        <a routerLink="/programs" class="btn btn-emerald">
+          <span>استكشف كافة البرامج والمناهج</span>
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. WHY CHOOSE US / ACADEMY FEATURES (4-GRID HIGHLIGHTS)
+       ========================================================================= -->
+  <section class="why-us-section">
+    <div class="container">
+      <div class="why-us-split-composition">
+        <div class="why-us-intro-side">
+          <div class="badge-pill-gold">
+            <span class="badge-dot"></span>
+            <span>لماذا أكاديمية أهل القرآن؟</span>
+          </div>
+          <h2 class="why-us-title">بيئة تعليمية تجمع بين الأصالة والتقنية الحديثة</h2>
+          <p class="why-us-text">
+            نحرص على تقديم تجربة تعليمية متميزة تمكنك من تعلم القرآن وإتقان تلاوته من منزلك بكل يسر وانضباط.
+          </p>
+          <div class="why-us-action">
+            <a routerLink="/contact" class="btn btn-gold">
+              <span>احجز تقييمك المجاني</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 Grid Features -->
+        <div class="why-us-grid-side">
+          <div *ngFor="let feat of features" class="feature-rich-cell glass-card">
+            <div class="feature-icon-circle">
+              <i [class]="feat.icon"></i>
+            </div>
+            <h3 class="feature-cell-title">{{ feat.title }}</h3>
+            <p class="feature-cell-desc">{{ feat.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. STUDENT LEARNING JOURNEY (4-STEP CONNECTED ROADMAP)
+       ========================================================================= -->
+  <section class="learning-roadmap-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>خطوات رحلتك التعليمية</span>
+        </div>
+        <h2 class="section-title">كيف تبدأ وتتقدم في الأكاديمية؟</h2>
+        <p class="section-desc">
+          أربع خطوات سهلة وميسرة تبدأ من تسجيلك وحتى بلوغ هدفك في إتقان كتاب الله.
+        </p>
+      </div>
+
+      <!-- Roadmap Grid -->
+      <div class="roadmap-track-container">
+        <div class="roadmap-connected-gold-line"></div>
+
+        <div class="roadmap-steps-grid">
+          <div *ngFor="let step of journeySteps" class="roadmap-step-card glass-card">
+            <div class="step-header-row">
+              <div class="step-num-circle">{{ step.step }}</div>
+              <span class="step-badge-pill">{{ step.badge }}</span>
+            </div>
+            <h3 class="step-card-title">{{ step.title }}</h3>
+            <p class="step-card-desc">{{ step.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. CALL TO ACTION BANNER (FULL-WIDTH IMMERSIVE EMERALD)
+       ========================================================================= -->
+  <section class="cta-immersive-banner-section">
+    <div class="container">
+      <div class="cta-emerald-banner">
+        <div class="cta-banner-content">
+          <div class="section-header dark" style="margin-bottom: 2.25rem;">
+            <div class="section-badge">
+              <span class="badge-dot"></span>
+              <span>ابدأ الآن — الجلسة الأولى مجانية</span>
+            </div>
+
+            <h2 class="section-title">
+              خطوتك الأولى نحو حفظ القرآن وتجويده تبدأ اليوم
+            </h2>
+
+            <p class="section-desc">
+              سجّل بياناتك في دقيقة واحدة، وسيقوم المشرف التعليمي بالتواصل معك لتحديد موعد جلستك التقييمية المجانية.
+            </p>
+          </div>
+
+          <div class="cta-banner-buttons">
+            <a routerLink="/contact" class="btn-cta-gold">
+              <span>احجز جلستك التقييمية المجانية</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a routerLink="/about" class="btn-cta-outline">
+              <span>تعرّف أكثر على الأكاديمية</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

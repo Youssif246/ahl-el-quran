@@ -1,0 +1,107 @@
+<div class="about-rich-page bg-arabesque-pattern">
+  <!-- Hero Section -->
+  <section class="about-page-hero">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 0;">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>عن أكاديمية أهل القرآن</span>
+        </div>
+        <h1 class="section-title" style="font-size: clamp(2.6rem, 5vw, 3.8rem);">منارة قرآنية لتعليم كتاب الله</h1>
+        <p class="section-desc">
+          صرحٌ تعليمي معاصر يُعنى بتعليم القرآن الكريم وعلومه عن بُعد، يربط الأصالة بالتقنية الحديثة لبناء جيلٍ قرآني متقن.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Inception Section -->
+  <section class="about-story-section">
+    <div class="container">
+      <div class="about-story-grid">
+        <div class="about-narrative-col">
+          <div class="badge-pill-gold">
+            <span class="badge-dot"></span>
+            <span>قصتنا ورؤيتنا</span>
+          </div>
+          <h2 class="about-story-heading">رحلة بدأت بالشغف، وتستمر بالإتقان</h2>
+          <p class="about-story-lead">
+            انطلقت <strong>أكاديمية أهل القرآن</strong> لتكون جسراً يصل كل راغب في تعلّم كتاب الله بنخبة من خيرة المقرئين والمعلمين المجازين، وتذليل كافة العقبات الجغرافية والزمنية.
+          </p>
+          <p class="about-story-body">
+            نؤمن بأن تعليم القرآن الكريم رسالة سامية تتطلب الجمع بين أصالة السند والمتون التجويدية المعتمدة، وبين أحدث الوسائل التقنية التفاعلية التي تجعل التعلّم ممتعاً وميسراً لكل فئات المجتمع.
+          </p>
+        </div>
+
+        <div class="about-shrine-col">
+          <div class="about-shrine-card glass-card text-center">
+            <div class="shrine-quran-icon"><i class="fa-solid fa-book-quran"></i></div>
+            <span class="shrine-bismillah font-quran-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+            <h3 class="shrine-verse font-quran-text">«وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا»</h3>
+            <span class="shrine-citation">[سورة المزمل: 4]</span>
+            <p class="shrine-commentary">
+              الغاية الكبرى التي نسعى لغرسها في قلوب طلابنا تلاوةً وفهماً وعملاً.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission Section -->
+  <section class="about-vision-section">
+    <div class="container">
+      <div class="vision-cards-grid">
+        <div class="vision-rich-card glass-card">
+          <div class="vision-badge-pill">رؤيتنا المستقبلية</div>
+          <h3 class="vision-card-title">الريادة العالمية في التعليم القرآني</h3>
+          <p class="vision-card-desc">
+            أن نكون المنصة الرائدة والموثوقة عالمياً في تعليم القرآن الكريم وتخريج الحفاظ المتقنين والمجازين بالسند المتصل في مختلف دول العالم.
+          </p>
+        </div>
+
+        <div class="vision-rich-card glass-card">
+          <div class="vision-badge-pill">رسالتنا السامية</div>
+          <h3 class="vision-card-title">تيسير التعلّم والتمكين القرآني</h3>
+          <p class="vision-card-desc">
+            تقديم تعليم قرآني فردي مباشر بجودة عالية، مع الالتزام بالمنهج النبوي في التلقي، وتوفير بيئة تعليمية محفزة تشجع على الاستمرار والإنجاز.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="about-values-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>قيمنا الراسخة</span>
+        </div>
+        <h2 class="section-title">القيم التي تحكم مسيرتنا التعليمية</h2>
+      </div>
+
+      <div class="values-rich-grid">
+        <div *ngFor="let val of coreValues" class="value-rich-card glass-card">
+          <div class="val-num-circle">{{ val.number }}</div>
+          <h3 class="val-card-title">{{ val.title }}</h3>
+          <p class="val-card-desc">{{ val.desc }}</p>
+        </div>
+      </div>
+
+      <div class="about-bottom-bridge text-center">
+        <h3 class="bridge-heading">انضم إلى مجتمع أهل القرآن اليوم</h3>
+        <p class="bridge-text">ابدأ رحلتك القرآنية واحجز جلستك التقييمية المجانية الآن.</p>
+        <div class="bridge-buttons">
+          <a routerLink="/contact" class="btn btn-gold">
+            <span>احجز تجربة مجانية</span>
+          </a>
+          <a routerLink="/programs" class="btn btn-outline-emerald">
+            <span>استكشف البرامج</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,1 +1,386 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   AHL EL QURAN ACADEMY — RICH, VIBRANT & SACRED DESIGN SYSTEM
+   Modern Islamic Educational Platform
+   ========================================================================== */
+
+:root {
+  /* Canvas & Warm Surfaces */
+  --color-bg: #F8F6F0;                /* Warm Cream / Off-White */
+  --color-bg-alt: #F0EBE1;            /* Soft Parchment Tint */
+  --color-surface: #FFFFFF;           /* Pure White Surface */
+  --color-surface-glass: rgba(255, 255, 255, 0.85);
+  --color-sage: #E8F0EC;              /* Soft Sage Green Accent */
+
+  /* Deep Emerald Brand Tones */
+  --color-emerald-deep: #06281E;      /* Deep Midnight Emerald */
+  --color-emerald: #0B3B2D;           /* Rich Royal Emerald */
+  --color-emerald-light: #145945;     /* Vibrant Emerald */
+  --color-emerald-glow: rgba(11, 59, 45, 0.25);
+
+  /* Radiant Royal Gold Accents */
+  --color-gold-start: #E5C158;
+  --color-gold: #D4AF37;              /* Royal Gold */
+  --color-gold-dark: #AA7C11;         /* Deep Antique Gold */
+  --color-gold-glow: rgba(212, 175, 55, 0.28);
+  --color-gold-dim: rgba(212, 175, 55, 0.12);
+  --gradient-gold: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #AA7C11 100%);
+  --gradient-gold-hover: linear-gradient(135deg, #F0D070 0%, #E5C158 50%, #B88B18 100%);
+  --gradient-emerald: linear-gradient(135deg, #06281E 0%, #0B3B2D 50%, #145945 100%);
+
+  /* High Contrast Readable Text */
+  --color-text-main: #1A2E28;         /* High-Contrast Charcoal Navy */
+  --color-text-muted: #4A635B;        /* Balanced Secondary Text */
+  --color-text-light: #7A938C;
+  --color-text-inverse: #FFFFFF;
+  --color-text-inverse-muted: #D1E2DB;
+
+  /* Borders & Shadows */
+  --border-gold-subtle: 1px solid rgba(212, 175, 55, 0.22);
+  --border-glass: 1px solid rgba(255, 255, 255, 0.6);
+  --border-card: 1px solid rgba(11, 59, 45, 0.08);
+
+  --shadow-subtle: 0 4px 20px rgba(11, 59, 45, 0.04);
+  --shadow-card: 0 10px 30px rgba(11, 59, 45, 0.07);
+  --shadow-hover: 0 18px 45px rgba(11, 59, 45, 0.13);
+  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.28);
+  --shadow-emerald: 0 12px 35px rgba(6, 40, 30, 0.3);
+
+  /* Typography */
+  --font-display: 'Amiri', 'Amiri Quran', serif;
+  --font-quran: 'Amiri Quran', serif;
+  --font-sans: 'Cairo', 'Readex Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Navigation Dimensions */
+  --navbar-height: 80px;
+
+  /* Motion */
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Foundation */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.8;
+  overflow-x: hidden;
+  direction: rtl;
+  text-align: right;
+  min-height: 100vh;
+}
+
+/* Main Layout Wrapper (Pushes content down cleanly below fixed navbar) */
+main,
+#main-content {
+  padding-top: var(--navbar-height);
+  min-height: calc(100vh - var(--navbar-height));
+  display: block;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 72px;
+  }
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container,
+  .container-narrow {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .container-narrow {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-emerald-deep);
+  word-break: break-word;
+}
+
+.font-quran-text {
+  font-family: var(--font-quran);
+}
+
+/* Subtle Arabesque Pattern */
+.bg-arabesque-pattern {
+  background-image: 
+    radial-gradient(rgba(212, 175, 55, 0.12) 1.5px, transparent 1.5px),
+    radial-gradient(rgba(11, 59, 45, 0.05) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2.2rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+  outline: none;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@media (max-width: 576px) {
+  .btn {
+    padding: 0.85rem 1.6rem;
+    font-size: 0.95rem;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+.btn-gold {
+  background: var(--gradient-gold);
+  color: #06281E;
+  box-shadow: var(--shadow-gold);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-gold:hover {
+  background: var(--gradient-gold-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
+}
+
+.btn-emerald {
+  background: var(--gradient-emerald);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-emerald);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.btn-emerald:hover {
+  background: linear-gradient(135deg, #0B3B2D 0%, #145945 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(6, 40, 30, 0.4);
+}
+
+.btn-outline-emerald {
+  background: transparent;
+  color: var(--color-emerald);
+  border: 1.5px solid var(--color-emerald);
+}
+
+.btn-outline-emerald:hover {
+  background: var(--color-sage);
+  color: var(--color-emerald-deep);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Global Section Headers — Unified Centered Architecture
+   ========================================================================== */
+.section-header,
+.section-header-center,
+.page-hero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto 3.5rem auto;
+  max-width: 780px;
+  width: 100%;
+}
+
+.section-badge,
+.badge-pill-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 1.25rem auto;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #936B18;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.section-badge .badge-dot,
+.badge-pill-gold .badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 10px var(--color-gold);
+  flex-shrink: 0;
+}
+
+.section-title,
+.section-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 5.5vw, 2.75rem);
+  font-weight: 700;
+  color: #0B3B2D;
+  line-height: 1.35;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  word-break: break-word;
+}
+
+.section-desc,
+.section-description,
+.section-subtitle {
+  max-width: 620px;
+  width: 100%;
+  font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+  line-height: 1.8;
+  color: #4A5B55;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section-header,
+  .section-header-center,
+  .page-hero-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Dark Theme Variant (for dark sections & CTAs) */
+.section-header.dark .section-badge,
+.section-header.dark .badge-pill-gold {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+  color: #E5C365;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.section-header.dark .section-title,
+.section-header.dark .section-headline {
+  color: #F7F3EA;
+}
+
+.section-header.dark .section-desc,
+.section-header.dark .section-description,
+.section-header.dark .section-subtitle {
+  color: rgba(247, 243, 234, 0.8);
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-gold);
+}
+
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-element {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #EAE5D9;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-emerald);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}

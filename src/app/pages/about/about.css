@@ -1,0 +1,317 @@
+/* About Page Styles — Rich & Modern */
+.about-rich-page {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+}
+
+.about-page-hero {
+  padding: 4.5rem 0 4rem 0;
+  background: radial-gradient(circle at top right, rgba(232, 240, 236, 0.9) 0%, rgba(248, 246, 240, 0.95) 70%);
+  border-bottom: 1px solid rgba(11, 59, 45, 0.08);
+}
+
+@media (max-width: 991px) {
+  .about-page-hero {
+    padding: 3.5rem 0 3rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page-hero {
+    padding: 2.5rem 0 2.5rem 0;
+  }
+}
+
+.about-page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 4.2rem);
+  color: var(--color-emerald-deep);
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.about-page-sub {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Story Section */
+.about-story-section {
+  padding: 7rem 0;
+  background: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .about-story-section {
+    padding: 4rem 0;
+  }
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .about-story-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
+  }
+}
+
+.about-story-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  color: var(--color-emerald-deep);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.about-story-lead {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--color-text-main);
+  margin-bottom: 1.25rem;
+}
+
+.about-story-lead strong {
+  color: var(--color-emerald);
+}
+
+.about-story-body {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--color-text-muted);
+}
+
+.about-shrine-card {
+  padding: 3.5rem 2.5rem;
+  background: var(--gradient-emerald);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-gold);
+  box-shadow: var(--shadow-emerald);
+}
+
+@media (max-width: 576px) {
+  .about-shrine-card {
+    padding: 2.25rem 1.25rem;
+  }
+}
+
+.shrine-quran-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-gold-start);
+}
+
+.shrine-bismillah {
+  font-size: 1.3rem;
+  color: var(--color-gold-start);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.shrine-verse {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.shrine-citation {
+  font-size: 0.85rem;
+  color: var(--color-gold-start);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.shrine-commentary {
+  font-size: 0.95rem;
+  color: var(--color-text-inverse-muted);
+}
+
+/* Vision & Mission */
+.about-vision-section {
+  padding: 6rem 0;
+  background: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .about-vision-section {
+    padding: 4rem 0;
+  }
+}
+
+.vision-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .vision-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.vision-rich-card {
+  padding: 3rem 2.25rem;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(11, 59, 45, 0.09);
+}
+
+@media (max-width: 576px) {
+  .vision-rich-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+.vision-badge-pill {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-gold-dark);
+  background: rgba(212, 175, 55, 0.12);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.vision-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  color: var(--color-emerald-deep);
+  margin-bottom: 1rem;
+}
+
+.vision-card-desc {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: var(--color-text-muted);
+}
+
+/* Values Section */
+.about-values-section {
+  padding: 8rem 0;
+  background: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .about-values-section {
+    padding: 4rem 0;
+  }
+}
+
+.values-rich-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .values-rich-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .values-rich-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.value-rich-card {
+  background: var(--color-bg);
+  padding: 2.25rem 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(11, 59, 45, 0.08);
+}
+
+@media (max-width: 576px) {
+  .value-rich-card {
+    padding: 1.6rem 1.25rem;
+  }
+}
+
+.val-num-circle {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-gold-dark);
+  margin-bottom: 1rem;
+}
+
+.val-card-title {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-emerald-deep);
+  margin-bottom: 0.65rem;
+}
+
+.val-card-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+/* Bottom Bridge */
+.about-bottom-bridge {
+  background: var(--gradient-emerald);
+  color: #FFFFFF;
+  padding: 4.5rem 2.5rem;
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--color-gold);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .about-bottom-bridge {
+    padding: 2.5rem 1.25rem;
+    border-radius: 20px;
+  }
+}
+
+.bridge-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+.bridge-text {
+  font-size: 1.05rem;
+  color: var(--color-text-inverse-muted);
+  margin-bottom: 2rem;
+}
+
+.bridge-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+@media (max-width: 576px) {
+  .bridge-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .bridge-buttons .btn {
+    width: 100%;
+  }
+}

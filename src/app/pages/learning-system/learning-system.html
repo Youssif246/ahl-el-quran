@@ -1,0 +1,71 @@
+<div class="learning-rich-page bg-arabesque-pattern">
+  <!-- Page Hero -->
+  <section class="learning-page-hero">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 0;">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>منظومة التعلّم والارتقاء</span>
+        </div>
+        <h1 class="section-title" style="font-size: clamp(2.6rem, 5vw, 3.8rem);">نظام الدراسة والرحلة التعليمية</h1>
+        <p class="section-desc">
+          مسارٌ تفاعلي متدرج يجمع بين الانضباط والراحة والمرونة، ليصحبك في خطوات راسخة نحو إتقان كتاب الله.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Pillars of Learning Environment -->
+  <section class="learning-env-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>ركائز بيئة التعلّم</span>
+        </div>
+        <h2 class="section-title">بيئة قرآنية صُممت لراحتك وإنجازك</h2>
+      </div>
+
+      <div class="learning-env-grid">
+        <div *ngFor="let feat of systemFeatures" class="env-feature-card glass-card">
+          <div class="env-num-badge">{{ feat.num }}</div>
+          <h3 class="env-feature-title">{{ feat.title }}</h3>
+          <p class="env-feature-desc">{{ feat.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-Step Detailed Roadmap -->
+  <section class="learning-steps-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>درب التعلّم خطوة بخطوة</span>
+        </div>
+        <h2 class="section-title">مسار رحلتك في رحاب القرآن</h2>
+      </div>
+
+      <div class="steps-flow-container">
+        <div *ngFor="let step of journeySteps" class="step-flow-card glass-card">
+          <div class="step-flow-badge">{{ step.step }}</div>
+          <div class="step-flow-content">
+            <h3 class="step-flow-title">{{ step.title }}</h3>
+            <p class="step-flow-desc">{{ step.desc }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="learning-bottom-cta text-center">
+        <div class="cta-banner-box">
+          <h3 class="cta-box-title">ابدأ أولى خطواتك اليوم مجاناً</h3>
+          <p class="cta-box-desc">احجز جلستك التقييمية المجانية وسيقوم المشرف بالتواصل معك فوراً.</p>
+          <a routerLink="/contact" class="btn btn-gold">
+            <span>احجز جلستك المجانية</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

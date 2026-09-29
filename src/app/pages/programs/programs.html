@@ -1,0 +1,108 @@
+<div class="programs-rich-page bg-arabesque-pattern">
+  <!-- Page Header Sanctuary -->
+  <section class="programs-page-hero">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 0;">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>المسارات التعليمية المعتمدة</span>
+        </div>
+        <h1 class="section-title" style="font-size: clamp(2.6rem, 5vw, 3.8rem);">البرامج والمسارات القرآنية</h1>
+        <p class="section-desc">
+          سلسلة متدرجة من المناهج القرآنية صُممت لتمكين كل راغب من التلاوة المتقنة والحفظ الراسخ ونيل الإجازات بالسند المتصل.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Programs Catalogue -->
+  <section class="programs-catalogue-area">
+    <div class="container">
+      <div class="catalogue-layout-grid">
+        <!-- Sidebar Navigation -->
+        <div class="catalogue-sidebar" role="tablist" aria-label="فهرس البرامج القرآنية">
+          <div class="sidebar-header">
+            <span class="sidebar-tag">اختر المسار لعرض التفاصيل</span>
+          </div>
+
+          <div class="sidebar-buttons">
+            <button
+              *ngFor="let prog of programs"
+              type="button"
+              role="tab"
+              [attr.aria-selected]="selectedId() === prog.id"
+              [attr.aria-controls]="'prog-panel-' + prog.id"
+              [id]="'prog-tab-' + prog.id"
+              class="sidebar-nav-item"
+              [class.is-active]="selectedId() === prog.id"
+              (click)="selectProgram(prog.id)">
+              
+              <span class="prog-num-badge">{{ prog.number }}</span>
+              <div class="prog-meta">
+                <strong class="prog-name">{{ prog.title }}</strong>
+                <span class="prog-category">{{ prog.subtitle }}</span>
+              </div>
+              <span class="prog-active-arrow"><i class="fa-solid fa-arrow-left"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Program Detail Card -->
+        <div 
+          class="catalogue-display-card glass-card"
+          role="tabpanel"
+          [id]="'prog-panel-' + activeProgram.id"
+          [attr.aria-labelledby]="'prog-tab-' + activeProgram.id">
+          
+          <div class="active-detail-header">
+            <div class="badge-pill-gold">
+              <span class="badge-dot"></span>
+              <span>المسار {{ activeProgram.number }}</span>
+            </div>
+            <h2 class="active-program-heading">{{ activeProgram.title }}</h2>
+            <p class="active-program-sub">{{ activeProgram.subtitle }}</p>
+          </div>
+
+          <p class="active-program-narrative">{{ activeProgram.description }}</p>
+
+          <div class="active-target-box">
+            <span class="target-icon"><i class="fa-solid fa-bullseye"></i></span>
+            <div class="target-text">
+              <strong>الفئة المستهدفة:</strong>
+              <span>{{ activeProgram.targetAudience }}</span>
+            </div>
+          </div>
+
+          <div class="active-pillars-grid">
+            <div class="active-pillar-col">
+              <h3 class="pillar-subtitle">أبرز محاور المسار:</h3>
+              <ul class="pillar-items-list">
+                <li *ngFor="let h of activeProgram.highlights">
+                  <i class="fa-solid fa-check check-gold"></i>
+                  <span>{{ h }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="active-pillar-col">
+              <h3 class="pillar-subtitle">المخرجات التعليمية:</h3>
+              <ul class="pillar-items-list">
+                <li *ngFor="let outcome of activeProgram.outcomes">
+                  <i class="fa-solid fa-check check-gold"></i>
+                  <span>{{ outcome }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="active-enroll-action">
+            <a routerLink="/contact" class="btn btn-gold btn-enroll-main">
+              <span>سجّل في مسار «{{ activeProgram.title }}» الآن</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

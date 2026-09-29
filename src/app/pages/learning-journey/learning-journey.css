@@ -1,0 +1,149 @@
+/* Learning Journey Section Styles */
+.journey-section {
+  padding: 7rem 0;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-header {
+  max-width: 720px;
+  margin: 0 auto 5rem auto;
+  text-align: center;
+}
+
+.journey-timeline-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Connecting Line */
+.journey-track-line {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .journey-track-line {
+    display: block;
+    position: absolute;
+    top: 36px;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-accent) 15%, var(--color-accent) 85%, transparent);
+    z-index: 1;
+    opacity: 0.4;
+  }
+}
+
+/* Steps Grid */
+.journey-steps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 992px) {
+  .journey-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Step Card */
+.journey-step-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background-color: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+@media (min-width: 992px) {
+  .journey-step-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 0.5rem;
+  }
+}
+
+.journey-step-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Marker / Node */
+.step-marker-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-outer-ring {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-bg-surface);
+  border: 2px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(184, 148, 77, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.journey-step-card:hover .step-outer-ring {
+  background: var(--color-primary);
+  border-color: var(--color-accent-light);
+  box-shadow: 0 0 25px rgba(184, 148, 77, 0.4);
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.journey-step-card:hover .step-num {
+  color: var(--color-accent-light);
+}
+
+/* Content */
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .step-content {
+    margin-top: 1.5rem;
+  }
+}
+
+.step-title {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.step-description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
